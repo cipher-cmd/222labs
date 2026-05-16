@@ -144,6 +144,18 @@ function App() {
           <div className="mag-item">
             <img src="/images/media4.webp" alt="Fortune Time Magazine" />
           </div>
+          <div className="mag-item">
+            <img src="/images/media5.webp" alt="Vogue Edition Magazine" />
+          </div>
+          <div className="mag-item">
+            <img src="/images/media6.webp" alt="GQ Style Magazine" />
+          </div>
+          <div className="mag-item">
+            <img src="/images/media7.webp" alt="Forbes Life Magazine" />
+          </div>
+          <div className="mag-item">
+            <img src="/images/media8.webp" alt="Time Spotlight Magazine" />
+          </div>
         </div>
       </section>
 
