@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(browse)",
+      "PowerShell(Start-Process -NoNewWindow -FilePath \"cmd\" -ArgumentList \"/c\", \"cd /d C:\\\\Users\\\\Furqan\\\\Desktop\\\\Projects\\\\222lab && npm run dev -- --port 5173\" -PassThru)",
+      "PowerShell(Start-Sleep -Seconds 5; try { $r = Invoke-WebRequest -Uri \"http://localhost:5173\" -TimeoutSec 5 -ErrorAction Stop; \"HTTP $\\($r.StatusCode\\)\" } catch { \"not ready: $_\" })",
+      "PowerShell(Select-String *)"
+    ]
+  }
+}

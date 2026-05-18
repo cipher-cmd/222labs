@@ -43,7 +43,7 @@ function App() {
           <img src="/images/mobileHero.webp" alt="Mobile Background Blur" className="hero-bg-blur mobile-only" />
           <img src="/images/mobileHero.webp" alt="Mobile Hero background" className="hero-bg mobile-only hero-bg-mobile" />
         </div>
-        <div className="hero-content reveal">
+        <div className="hero-content">
           <h1 className="hero-title">Happy Birthday Saumi</h1>
           <p className="hero-subtext">HBD to the most special person, stay blessed, keep being fun, caring, grateful to have you.</p>
         </div>
@@ -86,7 +86,7 @@ function App() {
             Thanks for being you.
           </p>
         </div>
-        <div className="dear-saumi-images parallax-img-group">
+        <div className="dear-saumi-images">
           <img src="/images/dearSaumi1.svg" alt="Saumi 1" className="ds-img ds-img-1" />
           <img src="/images/dearSaumi2.svg" alt="Saumi 2" className="ds-img ds-img-2" />
           <img src="/images/dearSaumi3.svg" alt="Saumi 3" className="ds-img ds-img-3" />
