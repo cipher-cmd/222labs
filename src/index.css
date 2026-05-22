@@ -555,6 +555,11 @@ body {
 }
 
 @media (max-width: 900px) {
+  .hero { height: 100dvh; }
+  .hero-parallax-wrapper { will-change: auto; }
+  .hero-bg { animation: none; will-change: auto; }
+  .hero-bg-blur { filter: brightness(0.5); }
+
   .hero-title { font-size: 3.5rem; }
   
   .dear-saumi { 
