@@ -16,17 +16,31 @@ function App() {
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach((el) => observer.observe(el));
 
-    // Simple Parallax for hero
-    const handleScroll = () => {
-      if (heroBgRef.current) {
-        const scrolled = window.scrollY;
-        heroBgRef.current.style.transform = `translateY(${scrolled * 0.4}px)`;
-      }
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Parallax — desktop only. Mobile skips to avoid compositor jank.
+    const isMobile = window.matchMedia('(max-width: 900px)').matches;
+    let rafId = null;
+
+    if (!isMobile) {
+      const handleScroll = () => {
+        if (rafId) return;
+        rafId = requestAnimationFrame(() => {
+          if (heroBgRef.current) {
+            heroBgRef.current.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+          }
+          rafId = null;
+        });
+      };
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+        if (rafId) cancelAnimationFrame(rafId);
+        observer.disconnect();
+      };
+    }
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
     };
   }, []);
 
