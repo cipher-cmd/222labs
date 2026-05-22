@@ -106,6 +106,8 @@ body {
   text-align: center;
   color: #fff;
   background-color: #111;
+  pointer-events: none; /* Prevents touch/scroll capture issues on mobile/iOS */
+  touch-action: pan-y;  /* Explicitly allow vertical scrolling */
 }
 
 .hero-parallax-wrapper {
