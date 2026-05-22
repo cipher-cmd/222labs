@@ -51,11 +51,11 @@ function App() {
         <div className="hero-overlay"></div>
         <div ref={heroBgRef} className="hero-parallax-wrapper">
           {/* Desktop background images */}
-          <img src="/images/hero.webp" alt="Background Blur" className="hero-bg-blur desktop-only" />
-          <img src="/images/hero.webp" alt="Hero background" className="hero-bg desktop-only" />
+          <img src="/images/hero.webp" alt="Background Blur" className="hero-bg-blur desktop-only" fetchpriority="high" />
+          <img src="/images/hero.webp" alt="Hero background" className="hero-bg desktop-only" fetchpriority="high" />
           {/* Mobile background images */}
-          <img src="/images/mobileHero.webp" alt="Mobile Background Blur" className="hero-bg-blur mobile-only" />
-          <img src="/images/mobileHero.webp" alt="Mobile Hero background" className="hero-bg mobile-only hero-bg-mobile" />
+          <img src="/images/mobileHero.webp" alt="Mobile Background Blur" className="hero-bg-blur mobile-only" fetchpriority="high" />
+          <img src="/images/mobileHero.webp" alt="Mobile Hero background" className="hero-bg mobile-only hero-bg-mobile" fetchpriority="high" />
         </div>
         <div className="hero-content">
           <h1 className="hero-title">Happy Birthday Saumi</h1>
@@ -71,12 +71,12 @@ function App() {
           <div className="as-seen-line"></div>
         </div>
         <div className="logos-group">
-          <img src="/images/flopshop.webp" alt="Flopshop" className="as-seen-img" />
-          <img src="/images/guts.webp" alt="Guts" className="as-seen-img" />
-          <img src="/images/pattepack.webp" alt="Pattepack" className="as-seen-img" />
-          <img src="/images/timepass.webp" alt="Timepass" className="as-seen-img" />
-          <img src="/images/windup.webp" alt="Windup" className="as-seen-img" />
-          <img src="/images/zipit.webp" alt="Zipit" className="as-seen-img" />
+          <img src="/images/flopshop.webp" alt="Flopshop" className="as-seen-img" loading="lazy" decoding="async" />
+          <img src="/images/guts.webp" alt="Guts" className="as-seen-img" loading="lazy" decoding="async" />
+          <img src="/images/pattepack.webp" alt="Pattepack" className="as-seen-img" loading="lazy" decoding="async" />
+          <img src="/images/timepass.webp" alt="Timepass" className="as-seen-img" loading="lazy" decoding="async" />
+          <img src="/images/windup.webp" alt="Windup" className="as-seen-img" loading="lazy" decoding="async" />
+          <img src="/images/zipit.webp" alt="Zipit" className="as-seen-img" loading="lazy" decoding="async" />
         </div>
       </section>
 
@@ -101,10 +101,10 @@ function App() {
           </p>
         </div>
         <div className="dear-saumi-images">
-          <img src="/images/dearSaumi1.svg" alt="Saumi 1" className="ds-img ds-img-1" />
-          <img src="/images/dearSaumi2.svg" alt="Saumi 2" className="ds-img ds-img-2" />
-          <img src="/images/dearSaumi3.svg" alt="Saumi 3" className="ds-img ds-img-3" />
-          <img src="/images/dearSaumi4.svg" alt="Saumi 4" className="ds-img ds-img-4" />
+          <img src="/images/dearSaumi1.svg" alt="Saumi 1" className="ds-img ds-img-1" loading="lazy" decoding="async" />
+          <img src="/images/dearSaumi2.svg" alt="Saumi 2" className="ds-img ds-img-2" loading="lazy" decoding="async" />
+          <img src="/images/dearSaumi3.svg" alt="Saumi 3" className="ds-img ds-img-3" loading="lazy" decoding="async" />
+          <img src="/images/dearSaumi4.svg" alt="Saumi 4" className="ds-img ds-img-4" loading="lazy" decoding="async" />
         </div>
       </section>
 
@@ -113,15 +113,15 @@ function App() {
         <h2 className="section-title">Testimonials</h2>
         <div className="testimonials-grid">
           <div className="test-card">
-            <img src="/images/testimonial1.webp" alt="Simran Jain" />
+            <img src="/images/testimonial1.webp" alt="Simran Jain" loading="lazy" decoding="async" />
             <p className="test-quote">“Isko kaise jhel lete ho” is my best dialogue since birth. Jk chote, Watching you grow into a b’ful, independent, person is the best feeling. You’ll always be my baby, my soul</p>
           </div>
           <div className="test-card">
-            <img src="/images/testimonial2.webp" alt="Mammi Pappa" />
+            <img src="/images/testimonial2.webp" alt="Mammi Pappa" loading="lazy" decoding="async" />
             <p className="test-quote">My late night tv partner, darling daughter, sunny <span className="basic-amp">&</span> biggest rondu, proud of you <span className="basic-amp">&</span> LY</p>
           </div>
           <div className="test-card">
-            <img src="/images/testimonial3.webp" alt="Apurv Budhraja" />
+            <img src="/images/testimonial3.webp" alt="Apurv Budhraja" loading="lazy" decoding="async" />
             <p className="test-quote">Khud kuch kaam karle Thanks for lifetime memories, and now for some space, best sister</p>
           </div>
         </div>
@@ -147,28 +147,25 @@ function App() {
       <section className="magazines reveal">
         <div className="magazines-grid">
           <div className="mag-item">
-            <img src="/images/media1.webp" alt="The Chicken Magazine" />
+            <img src="/images/media1.webp" alt="The Chicken Magazine" loading="lazy" decoding="async" />
           </div>
           <div className="mag-item">
-            <img src="/images/media2.webp" alt="R. Republic Magazine" />
+            <img src="/images/media2.webp" alt="R. Republic Magazine" loading="lazy" decoding="async" />
           </div>
           <div className="mag-item">
-            <img src="/images/media3.webp" alt="Femina Magazine" />
+            <img src="/images/media3.webp" alt="Femina Magazine" loading="lazy" decoding="async" />
           </div>
           <div className="mag-item">
-            <img src="/images/media4.webp" alt="Fortune Time Magazine" />
+            <img src="/images/media4.webp" alt="Fortune Time Magazine" loading="lazy" decoding="async" />
           </div>
           <div className="mag-item">
-            <img src="/images/media5.webp" alt="Vogue Edition Magazine" />
+            <img src="/images/media5.webp" alt="Vogue Edition Magazine" loading="lazy" decoding="async" />
           </div>
           <div className="mag-item">
-            <img src="/images/media6.webp" alt="GQ Style Magazine" />
+            <img src="/images/media6.webp" alt="GQ Style Magazine" loading="lazy" decoding="async" />
           </div>
           <div className="mag-item">
-            <img src="/images/media7.webp" alt="Forbes Life Magazine" />
-          </div>
-          <div className="mag-item">
-            <img src="/images/media8.webp" alt="Time Spotlight Magazine" />
+            <img src="/images/media8.webp" alt="Time Spotlight Magazine" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
@@ -177,7 +174,7 @@ function App() {
       <footer className="footer-section reveal">
         <div className="footer-inner">
           <div className="footer-left">
-            <img src="/images/logo.webp" alt="SAUMPALS Logo" className="footer-logo" />
+            <img src="/images/logo.webp" alt="SAUMPALS Logo" className="footer-logo" loading="lazy" decoding="async" />
             <div className="footer-copyright-block">
               <p className="footer-copyright"><span className="footer-underline">222lab.in</span> 2026</p>
               <p className="footer-copyright">Copyright @saumyajain.design</p>
