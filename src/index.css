@@ -129,11 +129,6 @@ body {
   z-index: 0;
 }
 
-@keyframes subtleZoom {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.1); }
-}
-
 .hero-bg {
   position: absolute;
   top: 0;
@@ -142,8 +137,6 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  animation: subtleZoom 25s ease-in-out alternate infinite;
-  will-change: transform;
 }
 
 .hero-bg-mobile {
@@ -558,9 +551,6 @@ body {
 
 @media (max-width: 900px) {
   .hero { height: 100vh; }
-  .hero-parallax-wrapper { will-change: auto; }
-  .hero-bg { animation: none; will-change: auto; }
-  .hero-bg-blur { filter: brightness(0.5); }
 
   .hero-title { font-size: 3.5rem; }
   
