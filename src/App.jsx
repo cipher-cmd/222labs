@@ -50,11 +50,9 @@ function App() {
       <section className="hero">
         <div className="hero-overlay"></div>
         <div ref={heroBgRef} className="hero-parallax-wrapper">
-          {/* Desktop background images */}
-          <img src="/images/hero.webp" alt="Background Blur" className="hero-bg-blur desktop-only" fetchpriority="high" />
+          {/* Desktop background image */}
           <img src="/images/hero.webp" alt="Hero background" className="hero-bg desktop-only" fetchpriority="high" />
-          {/* Mobile background images */}
-          <img src="/images/mobileHero.webp" alt="Mobile Background Blur" className="hero-bg-blur mobile-only" fetchpriority="high" />
+          {/* Mobile background image */}
           <img src="/images/mobileHero.webp" alt="Mobile Hero background" className="hero-bg mobile-only hero-bg-mobile" fetchpriority="high" />
         </div>
         <div className="hero-content">
