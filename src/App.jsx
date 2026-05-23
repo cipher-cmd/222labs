@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 function App() {
-
+  const heroBgRef = useRef(null);
 
   useEffect(() => {
     // Reveal on scroll
@@ -16,6 +16,29 @@ function App() {
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach((el) => observer.observe(el));
 
+    // Parallax — desktop only. Mobile skips to avoid compositor jank.
+    const isMobile = window.matchMedia('(max-width: 900px)').matches;
+    let rafId = null;
+
+    if (!isMobile) {
+      const handleScroll = () => {
+        if (rafId) return;
+        rafId = requestAnimationFrame(() => {
+          if (heroBgRef.current) {
+            heroBgRef.current.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+          }
+          rafId = null;
+        });
+      };
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+        if (rafId) cancelAnimationFrame(rafId);
+        observer.disconnect();
+      };
+    }
+
     return () => {
       observer.disconnect();
     };
@@ -26,7 +49,7 @@ function App() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-overlay"></div>
-        <div className="hero-parallax-wrapper">
+        <div ref={heroBgRef} className="hero-parallax-wrapper">
           {/* Desktop background image */}
           <img src="/images/hero.webp" alt="Hero background" className="hero-bg desktop-only" fetchpriority="high" />
           {/* Mobile background image */}
