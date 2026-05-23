@@ -67,7 +67,7 @@ function App() {
 
   // Custom cursor — desktop/pointer devices only
   useEffect(() => {
-    const isTouch = window.matchMedia('(hover: none)').matches;
+    const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
     if (isTouch) return;
     const cursor = cursorRef.current;
     if (!cursor) return;
@@ -115,7 +115,7 @@ function App() {
 
   // Magazine 3D perspective tilt via event delegation
   useEffect(() => {
-    const isTouch = window.matchMedia('(hover: none)').matches;
+    const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
     if (isTouch) return;
 
     const grid = document.querySelector('.magazines-grid');
@@ -153,8 +153,11 @@ function App() {
     };
   }, []);
 
-  // Magnetic logo handlers
+  // Magnetic logo handlers — pointer devices only
+  const isCoarse = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
+
   const onLogoMove = (e) => {
+    if (isCoarse) return;
     const r = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - r.left) / r.width - 0.5) * 14;
     const y = ((e.clientY - r.top) / r.height - 0.5) * 14;
@@ -163,6 +166,7 @@ function App() {
   };
 
   const onLogoLeave = (e) => {
+    if (isCoarse) return;
     e.currentTarget.style.setProperty('--mx', '0px');
     e.currentTarget.style.setProperty('--my', '0px');
   };
