@@ -557,7 +557,7 @@ body {
 }
 
 @media (max-width: 900px) {
-  .hero { height: 100dvh; }
+  .hero { height: 100vh; }
   .hero-parallax-wrapper { will-change: auto; }
   .hero-bg { animation: none; will-change: auto; }
   .hero-bg-blur { filter: brightness(0.5); }
@@ -595,6 +595,7 @@ body {
   .as-seen-on { padding: 50px 20px 20px; }
   .magazines { padding: 0 5% 50px; }
   .magazines-grid { grid-template-columns: 1fr; gap: 30px; max-width: 400px; margin: 0 auto; }
+  .mag-item:last-child:nth-child(odd) { max-width: none; }
   
   .media-body { font-size: 1.15rem; padding: 0 15px; }
   .media-body p { margin-bottom: 18px; line-height: 1.8; }
