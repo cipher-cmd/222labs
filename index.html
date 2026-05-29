@@ -2,21 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/images/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F2F0E4" />
     <title>Happy birthday saumi</title>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
     <meta name="description" content="A digital celebration for Saumya Jain - Founder of 222lab.in and creative inspiration. Discover her journey, testimonials, and media features. Built by Team PeakPals." />
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://saumyapals.com/" />
     <meta property="og:title" content="Happy Birthday Saumi | Digital Celebration" />
     <meta property="og:description" content="A special birthday tribute to Saumya – her story, her achievements, and her friends' messages." />
-    <meta property="og:image" content="/images/hero.webp" />
+    <meta property="og:image" content="https://saumyapals.com/images/hero.webp" />
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="Happy Birthday Saumi" />
     <meta property="twitter:description" content="Celebrating Saumya's special day with memories, media recognition, and more." />
-    <meta property="twitter:image" content="/images/hero.webp" />
+    <meta property="twitter:image" content="https://saumyapals.com/images/hero.webp" />
+    <!-- Google Fonts — preconnect first, then stylesheet (non-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" />
+    <!-- Hero image preload for LCP -->
+    <link rel="preload" as="image" href="/images/hero.webp" media="(min-width: 601px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/mobileHero.webp" media="(max-width: 600px)" fetchpriority="high" />
   </head>
   <body>
     <div id="root"></div>

@@ -5,38 +5,19 @@ function App() {
   const cursorRef = useRef(null);
   const scrollProgressRef = useRef(null);
 
-  // Scroll: parallax + progress bar with dynamic will-change
+  // Scroll: progress bar only (no hero parallax)
   useEffect(() => {
-    const isMobile = window.matchMedia('(max-width: 900px)').matches;
     let rafId = null;
-    let idleTimer = null;
-    let willChangeActive = false;
 
     const handleScroll = () => {
       if (rafId) return;
       rafId = requestAnimationFrame(() => {
         const scrollY = window.scrollY;
 
-        if (!isMobile && heroBgRef.current) {
-          if (!willChangeActive) {
-            heroBgRef.current.style.willChange = 'transform';
-            willChangeActive = true;
-          }
-          heroBgRef.current.style.transform = `translateY(${scrollY * 0.4}px)`;
-        }
-
         if (scrollProgressRef.current) {
           const total = document.documentElement.scrollHeight - window.innerHeight;
           scrollProgressRef.current.style.width = `${(scrollY / total) * 100}%`;
         }
-
-        clearTimeout(idleTimer);
-        idleTimer = setTimeout(() => {
-          if (!isMobile && heroBgRef.current && willChangeActive) {
-            heroBgRef.current.style.willChange = 'auto';
-            willChangeActive = false;
-          }
-        }, 300);
 
         rafId = null;
       });
@@ -46,7 +27,6 @@ function App() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
       if (rafId) cancelAnimationFrame(rafId);
-      clearTimeout(idleTimer);
     };
   }, []);
 

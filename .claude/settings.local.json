@@ -4,7 +4,28 @@
       "Skill(browse)",
       "PowerShell(Start-Process -NoNewWindow -FilePath \"cmd\" -ArgumentList \"/c\", \"cd /d C:\\\\Users\\\\Furqan\\\\Desktop\\\\Projects\\\\222lab && npm run dev -- --port 5173\" -PassThru)",
       "PowerShell(Start-Sleep -Seconds 5; try { $r = Invoke-WebRequest -Uri \"http://localhost:5173\" -TimeoutSec 5 -ErrorAction Stop; \"HTTP $\\($r.StatusCode\\)\" } catch { \"not ready: $_\" })",
-      "PowerShell(Select-String *)"
+      "PowerShell(Select-String *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git *)",
+      "Bash(git show *)",
+      "Bash(dir src *)",
+      "Bash(npm uninstall *)",
+      "Bash(npm run *)",
+      "Bash(Start-Process -NoNewWindow -FilePath \"npm\" -ArgumentList \"run\",\"dev\")",
+      "Bash(Start-Sleep -Seconds 3)",
+      "Bash(Write-Output \"Server starting...\")",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(/c/Users/Furqan/.claude/skills/gstack/browse/dist/browse goto *)",
+      "Bash(/c/Users/Furqan/.claude/skills/gstack/browse/dist/browse screenshot *)",
+      "Bash($B status *)",
+      "Bash(pkill -f \"browse\")",
+      "Bash(pkill -f \"chromium\")",
+      "Bash(rm -f /tmp/.browse-* ~/.gstack/.browse-*)",
+      "Read(//c/tmp/**)",
+      "Read(//c/Users/Furqan/.gstack/**)",
+      "Read(//c/Users/Furqan/.gstack/sessions/**)",
+      "Bash(echo \"exit: $?\")"
     ]
   }
 }
